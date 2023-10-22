@@ -6,22 +6,34 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## How to use
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1 - The application has a counter that the user can increase, decrease or reset it.
 
-## Build
+1.1 How to Increase the Counter
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Go to the "Increase Counter Page" by clicking on the navigation link and press the button to increase the counter
 
-## Running unit tests
+  1.2 How to decrease the Counter
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Go to the "Decrease Counter Page" by clicking on the navigation link and press the button to increase the counter
 
-## Running end-to-end tests
+  1.3 How to Reset the Counter
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Go to the "Reset Counter Page" by clicking in the navigation link, select your birthdate and if you are over 18 years old, press the reset button in order to reset the counter.
 
-## Further help
+## How the application Works
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2: Development Structure
+2.1 - There is a main counter that is an Observable who comes from a behavior subject. This observable will emit new values every time that the increase, decrease and reset counter buttons are pressed.
+2.2 - There is a service to do the state management of the counter, where we can increase, decrease and reset the counter.
+2.3 - The counter value is saved in the local Storage every time it changes. So we can refresh the page and get the last value again.
+2.4 - The background color of the application will change if the value of the counter equals 10 or -10
+
+3 - Routing
+
+3.1 There are 3 main routes:
+
+3.2 - "/up" - Who calls the increase-counter.component
+3.3 - "/down" - Who calls the decrease-counter.component
+3.4 - "/reset" - Who calls the reset-counter.component

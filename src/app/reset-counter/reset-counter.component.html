@@ -1,0 +1,24 @@
+<div class="d-flex flex-column">
+  <div>
+    <p>Select your birth date</p>
+    <ngb-datepicker
+      (dateSelect)="onDateSelect($event)"
+      [minDate]="{ year: 1923, month: 1, day: 1 }"
+      [maxDate]="{ year: 2100, month: 12, day: 31 }"
+    ></ngb-datepicker>
+  </div>
+
+  <div>
+    <input type="text" ngbDatepicker [(ngModel)]="date" />
+
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="resetCounter()"
+      [disabled]="isOlder"
+    >
+      Reset Counter
+    </button>
+    <p>Hint: You can only reset the counter if you are over 18 years old</p>
+  </div>
+</div>
